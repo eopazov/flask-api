@@ -1,0 +1,659 @@
+{
+	"info": {
+		"_postman_id": "f5fa11dc-17ca-417c-b21a-b17c192a82f8",
+		"name": "Prueba tecnica EO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26699276"
+	},
+	"item": [
+		{
+			"name": "Instituciones get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/api/instituciones",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"instituciones"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Instituciones get",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:5000/api/instituciones",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"instituciones"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1180"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.5"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Apr 2023 07:47:40 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"Universidad de Santiago de Chile\",\n        \"abreviacion\": \"UNI\",\n        \"descripcion\": \"Universidad pública en la Región Metropolitana\",\n        \"direccion\": \"Av. Libertador Bernardo O'Higgins 3363, Estación Central\",\n        \"fecha_creacion\": \"19/04/1849\",\n        \"ubicacion\": \"https://www.google.com/maps/search/Av.+Libertador+Bernardo+O'Higgins+3363,+Estacion+Central\"\n    },\n    {\n        \"id\": 2,\n        \"nombre\": \"Universidad Católica de Chile\",\n        \"abreviacion\": \"UNI\",\n        \"descripcion\": \"Universidad privada en la Región Metropolitana\",\n        \"direccion\": \"Av. Libertador Bernardo O'Higgins 340, Santiago\",\n        \"fecha_creacion\": \"21/06/1888\",\n        \"ubicacion\": \"https://www.google.com/maps/search/Av.+Libertador+Bernardo+O'Higgins+340,+Santiago\"\n    },\n    {\n        \"id\": 3,\n        \"nombre\": \"Pontificia Universidad Católica de Valparaíso\",\n        \"abreviacion\": \"PON\",\n        \"descripcion\": \"Universidad privada en la Región de Valparaíso\",\n        \"direccion\": \"Av. Brasil 2950, Valparaíso\",\n        \"fecha_creacion\": \"11/06/1928\",\n        \"ubicacion\": \"https://www.google.com/maps/search/Av.+Brasil+2950,+Valparaiso\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Crear Institucion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Universidad de Concepción\",\r\n  \"descripcion\": \"Universidad pública chilena con sede en la ciudad de Concepción.\",\r\n  \"direccion\": \"Victoria 471, Barrio Universitario, Concepción, Región del Bío Bío, Chile.\",\r\n  \"fecha_creacion\": \"1919-05-14\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/api/instituciones",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"instituciones"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear Institucion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Universidad de Concepción\",\r\n  \"descripcion\": \"Universidad pública chilena con sede en la ciudad de Concepción.\",\r\n  \"direccion\": \"Victoria 471, Barrio Universitario, Concepción, Región del Bío Bío, Chile.\",\r\n  \"fecha_creacion\": \"1919-05-14\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:5000/api/instituciones",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"instituciones"
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "460"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.5"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Apr 2023 07:47:46 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"nombre\": \"Universidad de Concepción\",\n    \"abreviacion\": \"UNI\",\n    \"descripcion\": \"Universidad pública chilena con sede en la ciudad de Concepción.\",\n    \"direccion\": \"Victoria 471, Barrio Universitario, Concepción, Región del Bío Bío, Chile.\",\n    \"fecha_creacion\": \"14/05/1919\",\n    \"ubicacion\": \"https://www.google.com/maps/search/Victoria+471,+Barrio+Universitario,+Concepcion,+Region+del+Bio+Bio,+Chile.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Instituciones get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/api/instituciones/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"instituciones",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Instituciones get by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:5000/api/instituciones/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"instituciones",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1773"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.5"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Apr 2023 07:48:00 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"nombre\": \"Universidad de Santiago de Chile\",\n    \"abreviacion\": \"UNI\",\n    \"descripcion\": \"Universidad pública en la Región Metropolitana\",\n    \"direccion\": \"Av. Libertador Bernardo O'Higgins 3363, Estación Central\",\n    \"fecha_creacion\": \"19/04/1849\",\n    \"ubicacion\": \"https://www.google.com/maps/search/Av.+Libertador+Bernardo+O'Higgins+3363,+Estacion+Central\",\n    \"proyectos\": [\n        {\n            \"id\": 1,\n            \"nombre\": \"Proyecto A\",\n            \"descripcion\": \"Descripción del proyecto A\",\n            \"fecha_inicio\": \"01/01/2022\",\n            \"fecha_termino\": \"30/06/2022\",\n            \"usuario_responsable\": {\n                \"id\": 1,\n                \"nombre\": \"Juan\",\n                \"apellidos\": \"Pérez García\",\n                \"rut\": \"123456789-0\",\n                \"fecha_nacimiento\": \"12/05/1990\",\n                \"cargo\": \"Ingeniero\",\n                \"edad\": 33\n            }\n        },\n        {\n            \"id\": 2,\n            \"nombre\": \"Proyecto B\",\n            \"descripcion\": \"Descripción del proyecto B\",\n            \"fecha_inicio\": \"01/02/2022\",\n            \"fecha_termino\": \"31/07/2022\",\n            \"usuario_responsable\": {\n                \"id\": 2,\n                \"nombre\": \"María\",\n                \"apellidos\": \"López Ramírez\",\n                \"rut\": \"987654321-0\",\n                \"fecha_nacimiento\": \"18/10/1995\",\n                \"cargo\": \"Analista\",\n                \"edad\": 28\n            }\n        },\n        {\n            \"id\": 3,\n            \"nombre\": \"Proyecto C\",\n            \"descripcion\": \"Descripción del proyecto C\",\n            \"fecha_inicio\": \"01/03/2022\",\n            \"fecha_termino\": \"31/08/2022\",\n            \"usuario_responsable\": {\n                \"id\": 2,\n                \"nombre\": \"María\",\n                \"apellidos\": \"López Ramírez\",\n                \"rut\": \"987654321-0\",\n                \"fecha_nacimiento\": \"18/10/1995\",\n                \"cargo\": \"Analista\",\n                \"edad\": 28\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Edit institucion",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Universidad de Concepción EDITADO\",\r\n  \"descripcion\": \"Universidad pública chilena con sede en la ciudad de Concepción. EDITADO\",\r\n  \"direccion\": \"Victoria 471, Barrio Universitario, Concepción, Región del Bío Bío, Chile.\",\r\n  \"fecha_creacion\": \"1919-05-14\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/api/instituciones/4",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"instituciones",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Edit institucion",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Universidad de Concepción EDITADO\",\r\n  \"descripcion\": \"Universidad pública chilena con sede en la ciudad de Concepción. EDITADO\",\r\n  \"direccion\": \"Victoria 471, Barrio Universitario, Concepción, Región del Bío Bío, Chile.\",\r\n  \"fecha_creacion\": \"1919-05-14\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:5000/api/instituciones/4",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"instituciones",
+								"4"
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "476"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.5"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Apr 2023 07:48:06 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"nombre\": \"Universidad de Concepción EDITADO\",\n    \"abreviacion\": \"UNI\",\n    \"descripcion\": \"Universidad pública chilena con sede en la ciudad de Concepción. EDITADO\",\n    \"direccion\": \"Victoria 471, Barrio Universitario, Concepción, Región del Bío Bío, Chile.\",\n    \"fecha_creacion\": \"14/05/1919\",\n    \"ubicacion\": \"https://www.google.com/maps/search/Victoria+471,+Barrio+Universitario,+Concepcion,+Region+del+Bio+Bio,+Chile.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete institucion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/api/instituciones/4",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"instituciones",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete institucion",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:5000/api/instituciones/4",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"instituciones",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.5"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Apr 2023 07:48:11 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"respuesta\": \"Institución eliminada correctamente.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Proyectos get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/api/proyectos",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"proyectos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Proyectos get",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:5000/api/proyectos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"proyectos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2050"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.5"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Apr 2023 07:49:10 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"Proyecto A\",\n        \"descripcion\": \"Descripción del proyecto A\",\n        \"fecha_inicio\": \"01/01/2022\",\n        \"fecha_termino\": \"30/06/2022\",\n        \"institucion_id\": 1,\n        \"usuario_id\": 1,\n        \"dias_para_termino\": 180\n    },\n    {\n        \"id\": 2,\n        \"nombre\": \"Proyecto B\",\n        \"descripcion\": \"Descripción del proyecto B\",\n        \"fecha_inicio\": \"01/02/2022\",\n        \"fecha_termino\": \"31/07/2022\",\n        \"institucion_id\": 1,\n        \"usuario_id\": 2,\n        \"dias_para_termino\": 180\n    },\n    {\n        \"id\": 3,\n        \"nombre\": \"Proyecto C\",\n        \"descripcion\": \"Descripción del proyecto C\",\n        \"fecha_inicio\": \"01/03/2022\",\n        \"fecha_termino\": \"31/08/2022\",\n        \"institucion_id\": 1,\n        \"usuario_id\": 2,\n        \"dias_para_termino\": 183\n    },\n    {\n        \"id\": 4,\n        \"nombre\": \"Proyecto D\",\n        \"descripcion\": \"Descripción del proyecto D\",\n        \"fecha_inicio\": \"01/04/2022\",\n        \"fecha_termino\": \"30/09/2022\",\n        \"institucion_id\": 2,\n        \"usuario_id\": 3,\n        \"dias_para_termino\": 182\n    },\n    {\n        \"id\": 5,\n        \"nombre\": \"Proyecto E\",\n        \"descripcion\": \"Descripción del proyecto E\",\n        \"fecha_inicio\": \"01/05/2022\",\n        \"fecha_termino\": \"31/10/2022\",\n        \"institucion_id\": 2,\n        \"usuario_id\": 1,\n        \"dias_para_termino\": 183\n    },\n    {\n        \"id\": 6,\n        \"nombre\": \"Proyecto F\",\n        \"descripcion\": \"Descripción del proyecto F\",\n        \"fecha_inicio\": \"01/06/2022\",\n        \"fecha_termino\": \"30/11/2022\",\n        \"institucion_id\": 3,\n        \"usuario_id\": 3,\n        \"dias_para_termino\": 182\n    },\n    {\n        \"id\": 7,\n        \"nombre\": \"Proyecto G\",\n        \"descripcion\": \"Descripción del proyecto G\",\n        \"fecha_inicio\": \"01/07/2022\",\n        \"fecha_termino\": \"31/12/2022\",\n        \"institucion_id\": 3,\n        \"usuario_id\": 1,\n        \"dias_para_termino\": 183\n    },\n    {\n        \"id\": 8,\n        \"nombre\": \"Proyecto H\",\n        \"descripcion\": \"Descripción del proyecto H\",\n        \"fecha_inicio\": \"01/08/2022\",\n        \"fecha_termino\": \"31/01/2023\",\n        \"institucion_id\": 3,\n        \"usuario_id\": 2,\n        \"dias_para_termino\": 183\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Usuarios get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/api/usuarios",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Usuarios get",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:5000/api/usuarios",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "602"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.5"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Apr 2023 07:50:36 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"Juan\",\n        \"apellidos\": \"Pérez García\",\n        \"rut\": \"123456789-0\",\n        \"fecha_nacimiento\": \"12/05/1990\",\n        \"cargo\": \"Ingeniero\",\n        \"edad\": 33\n    },\n    {\n        \"id\": 2,\n        \"nombre\": \"María\",\n        \"apellidos\": \"López Ramírez\",\n        \"rut\": \"987654321-0\",\n        \"fecha_nacimiento\": \"18/10/1995\",\n        \"cargo\": \"Analista\",\n        \"edad\": 28\n    },\n    {\n        \"id\": 3,\n        \"nombre\": \"Pedro\",\n        \"apellidos\": \"González Torres\",\n        \"rut\": \"456789123-0\",\n        \"fecha_nacimiento\": \"28/02/1985\",\n        \"cargo\": \"Gerente\",\n        \"edad\": 38\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Usuarios get by rut",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/api/usuarios/123456789-0",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"usuarios",
+						"123456789-0"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Usuarios get by rut",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:5000/api/usuarios/123456789-0",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuarios",
+								"123456789-0"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "964"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.5"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Apr 2023 07:50:19 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"nombre\": \"Juan\",\n    \"apellidos\": \"Pérez García\",\n    \"rut\": \"123456789-0\",\n    \"fecha_nacimiento\": \"12/05/1990\",\n    \"cargo\": \"Ingeniero\",\n    \"edad\": 33,\n    \"proyectos_a_cargo\": [\n        {\n            \"id\": 1,\n            \"nombre\": \"Proyecto A\",\n            \"descripcion\": \"Descripción del proyecto A\",\n            \"fecha_inicio\": \"01/01/2022\",\n            \"fecha_termino\": \"30/06/2022\",\n            \"institucion_id\": 1,\n            \"dias_para_termino\": 180\n        },\n        {\n            \"id\": 5,\n            \"nombre\": \"Proyecto E\",\n            \"descripcion\": \"Descripción del proyecto E\",\n            \"fecha_inicio\": \"01/05/2022\",\n            \"fecha_termino\": \"31/10/2022\",\n            \"institucion_id\": 2,\n            \"dias_para_termino\": 183\n        },\n        {\n            \"id\": 7,\n            \"nombre\": \"Proyecto G\",\n            \"descripcion\": \"Descripción del proyecto G\",\n            \"fecha_inicio\": \"01/07/2022\",\n            \"fecha_termino\": \"31/12/2022\",\n            \"institucion_id\": 3,\n            \"dias_para_termino\": 183\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Proyectos tiempo para finalizar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/api/proyectos/tiempo_finalizacion",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"proyectos",
+						"tiempo_finalizacion"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Proyectos tiempo para finalizar",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:5000/api/proyectos/tiempo_finalizacion",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"proyectos",
+								"tiempo_finalizacion"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "658"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.9.5"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Apr 2023 07:53:41 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"Proyecto A\",\n        \"dias_para_termino\": 180\n    },\n    {\n        \"id\": 2,\n        \"nombre\": \"Proyecto B\",\n        \"dias_para_termino\": 180\n    },\n    {\n        \"id\": 3,\n        \"nombre\": \"Proyecto C\",\n        \"dias_para_termino\": 183\n    },\n    {\n        \"id\": 4,\n        \"nombre\": \"Proyecto D\",\n        \"dias_para_termino\": 182\n    },\n    {\n        \"id\": 5,\n        \"nombre\": \"Proyecto E\",\n        \"dias_para_termino\": 183\n    },\n    {\n        \"id\": 6,\n        \"nombre\": \"Proyecto F\",\n        \"dias_para_termino\": 182\n    },\n    {\n        \"id\": 7,\n        \"nombre\": \"Proyecto G\",\n        \"dias_para_termino\": 183\n    },\n    {\n        \"id\": 8,\n        \"nombre\": \"Proyecto H\",\n        \"dias_para_termino\": 183\n    }\n]"
+				}
+			]
+		}
+	]
+}

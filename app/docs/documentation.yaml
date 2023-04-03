@@ -1,0 +1,199 @@
+swagger: '2.0'
+info:
+  title: API prueba técnica
+  version: 1.0.0
+
+schemes:
+  - http
+produces:
+  - application/json
+
+paths:
+  /api/instituciones:
+    get:
+      summary: Obtener todas las instituciones
+      responses:
+        '200':
+          description: Lista de todas las instituciones
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Institucion'
+    post:
+      summary: Crear una nueva institución
+      parameters:
+        - in: body
+          name: institucion
+          description: Información de la nueva institución
+          schema:
+            $ref: '#/definitions/Institucion'
+          required: true
+      responses:
+        '201':
+          description: Institución creada
+          schema:
+            $ref: '#/definitions/Institucion'
+
+  /api/instituciones/{id}:
+    get:
+      summary: Obtener una institución por su ID y sus proyectos
+      parameters:
+        - in: path
+          name: id
+          description: ID de la institución
+          type: integer
+          required: true
+      responses:
+        '200':
+          description: Información de la institución
+          schema:
+            $ref: '#/definitions/Institucion'
+          
+        '404':
+          description: Institución no encontrada
+    put:
+      summary: Actualizar una institución existente
+      parameters:
+        - in: path
+          name: id
+          description: ID de la institución
+          type: integer
+          required: true
+        - in: body
+          name: institucion
+          description: Nueva información de la institución
+          schema:
+            $ref: '#/definitions/Institucion'
+          required: true
+      responses:
+        '201':
+          description: Institución actualizada
+          schema:
+            $ref: '#/definitions/Institucion'
+        '404':
+          description: Institución no encontrada
+    delete:
+      summary: Eliminar una institución existente
+      parameters:
+        - in: path
+          name: id
+          description: ID de la institución
+          type: integer
+          required: true
+      responses:
+        '204':
+          description: Institución eliminada
+        '404':
+          description: Institución no encontrada
+
+  /api/proyectos:
+    get:
+      summary: Obtener todos los proyectos
+      responses:
+        '200':
+          description: Lista de todos los proyectos
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Proyecto'
+
+  /api/usuarios:
+    get:
+      summary: Obtener todos los usuarios
+      responses:
+        '200':
+          description: Lista de todos los usuarios
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Usuario'
+
+  /usuarios/{rut}:
+    get:
+      summary: Obtener un usuario por su RUT y sus proyectos
+      parameters:
+        - name: rut
+          in: path
+          description: RUT del usuario
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Información del usuario solicitado
+          schema:
+            $ref: '#/definitions/Usuario'
+        '404':
+          description: No se encontró el usuario solicitado
+
+  /proyectos/tiempo_finalizacion:
+    get:
+      summary: Obtener el tiempo de finalización de los proyectos
+      responses:
+        '200':
+          description: Tiempo de finalización de los proyectos
+          schema:
+            type: object
+            properties:
+              id_proyecto:
+                type: integer
+              nombre:
+                type: string
+              dias_para_termino:
+                type: string
+
+definitions:
+  Institucion:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: ID de la institución
+      nombre:
+        type: string
+        description: Nombre de la institución
+      descripcion:
+        type: string
+        description: Descripción de la institución
+      direccion:
+        type: string
+        description: Dirección de la institución
+      fecha_creacion:
+        type: string
+        format: date
+        description: Fecha de creación de la institución
+  definitions:
+  Proyecto:
+    type: object
+    properties:
+      id:
+        type: integer
+      nombre:
+        type: string
+      descripcion:
+        type: string
+      fecha_creacion:
+        type: string
+      fecha_finalizacion:
+        type: string
+    required:
+      - id
+      - nombre
+      - fecha_creacion
+  Usuario:
+    type: object
+    properties:
+      rut:
+        type: string
+      nombre:
+        type: string
+      apellidos:
+        type: string
+      fecha_nacimiento:
+        type: string
+      cargo:
+        type: string
+      edad:
+        type: integer
+    required:
+      - rut
+      - nombre
